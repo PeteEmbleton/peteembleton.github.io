@@ -1,17 +1,24 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-  <head>
-    <title>Hello, WebVR! - A-Frame</title>
-    <meta name="description" content="Hello, WebVR! - A-Frame">
-    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
-  </head>
-  <body>
-    <a-scene>
-		<a-assets> 
-			<a-asset-item id="site-obj" src="https://raw.githubusercontent.com/PeteEmbleton/peteembleton.github.io/master/textured-nooptimisers.obj"></a-asset-item>
-			<a-asset-item id="site-mtl" src="https://raw.githubusercontent.com/PeteEmbleton/peteembleton.github.io/master/textured-nooptimisers.mtl"></a-asset-item>
-			</a-assets>
-		<a-entity obj-model="obj:#site-obj; mtl: site-mtl" ></a-entity>
-    </a-scene>
-  </body>
+<head>
+  <title>My first VR web app</title>
+  <script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
+</head>
+<body>
+  <a-scene>
+    <!-- this is the "stage" of your 3D content -->
+
+    <a-entity camera="" position="0 1.6 5"></a-entity> <!-- We move the camera around a bit -->
+    <a-entity light="type:directional;castShadow:true" position="0 10 0"></a-entity> <!-- Have a light shining down on our scene -->
+    <a-entity light="type:ambient; intensity:0.5"></a-entity> <!-- and some ambient lighting -->
+
+    <!-- now we add three objects -->
+    <a-box color="red" rotation="45 45 45" shadow="castShadow: true" position="2.5 1 1.5"></a-box>
+    <a-sphere color="blue" position="-2.5 1 1.5" shadow="castShadow: true"></a-sphere>
+    <a-torus-knot color="green" shadow="castShadow: true" position="0 2 0"></a-torus-knot>
+
+    <!-- and some "floor" -->
+    <a-plane scale="8 5 10" shadow="receiveShadow:true" rotation="-90 0 0" color="lightgreen"></a-plane>
+  </a-scene>
+</body>
 </html>
